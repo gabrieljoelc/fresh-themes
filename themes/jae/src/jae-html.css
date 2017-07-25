@@ -221,3 +221,20 @@ a:hover {
 .res-label {
   font-style: italic;
 }
+
+.employment li {
+  color: rgba(122,136,148,1.0);
+  list-style: none;
+}
+
+.employment li:before {
+  content: '\2022';
+  display: block;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+  left: -15px;
+  top: -3px;
+  color: rgba(10,122,255,1.0);
+  font-size: 20px;
+}
