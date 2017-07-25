@@ -1,9 +1,9 @@
-Theme: Modern
+Theme: Jae
 ===============
 A contemporary technical résumé theme. Features colored progress bars
 representing skill levels and Font Awesome icons for section headers.
 
-![](modern.png)
+![](jae.png)
 
 ## Use
 
