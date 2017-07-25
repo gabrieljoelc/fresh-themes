@@ -13,7 +13,10 @@
   },
   "fonts": {
     "all": {
-      "default": [ "ProximaNova-Regular", "Helvetica", "Arial", "sans" ]
+      "default": [ "ProximaNova-Regular", "Helvetica", "Arial", "serif" ],
+      "heading1": [ "ProximaNova-Bold", "Helvetica", "Arial", "serif" ],
+      "heading2": [ "ProximaNova-Bold", "Helvetica", "Arial", "serif" ],
+      "heading3": [ "ProximaNova-Sermibold", "Helvetica", "Arial", "serif" ]
     },
     "doc": {
       "default": "Calibri",
