@@ -13,9 +13,7 @@
   },
   "fonts": {
     "all": {
-      "default": [ "Helvetica Neue", "Helvetica", "Segoe UI", "Calibri", "sans-serif" ],
-      "heading1": ["Arial"],
-      "heading2": ["Arial"]
+      "default": [ "ProximaNova-Regular", "Helvetica", "Arial", "sans" ]
     },
     "doc": {
       "default": "Calibri",
