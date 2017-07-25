@@ -91,10 +91,12 @@
           (throw an exception) if contact is null, depending on Handlebars
           engine settings, but ((#has 'contact.email')) never will.
         --> }}
-        <div id="contact">
-          {{#has r.contact.email}}<div class="email"><a href="mailto:{{{ RAW.contact.email }}}">{{ RAW.contact.email }}</a></div>{{/has}}
-          {{#has r.contact.phone}}<div class="phone">{{ RAW.contact.phone }}</div>{{/has}}
-          {{#has r.contact.website}}<div class="website"><a href="{{{ RAW.contact.website }}}">{{ RAW.contact.website }}</a></div>{{/has}}
+        <div id="contact" class="contact">
+          <div class="email"><a href="mailto:{{{RAW.contact.email}}}"><i class="fa fa-lg fa-envelope" aria-hidden="true"></i></a></div>
+          {{#each r.social}}
+            <div><a href="{{{this.url}}}"><i class="fa fa-lg fa-{{{this.label}}}" aria-hidden="true"></i>
+</a></div>
+          {{/each}}
         </div>
       </header>
 
