@@ -72,8 +72,21 @@ hr {
   border-top: 1px solid #EEE;
 }
 
-.tenure, .keywords {
+.tenure::before {
+  content: " • ";
+}
+
+.keywords {
+  color: rgba(122,136,148,1.0);
   font-size: 75%;
+}
+
+.keyword::after {
+  content: " • ";
+}
+
+.keyword.last::after {
+  content: "";
 }
 
 h1 {

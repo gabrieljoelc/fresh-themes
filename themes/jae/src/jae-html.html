@@ -201,10 +201,10 @@ also doesn't render any content.
     {{else}}
     {{ employer }}
     {{/if}}
-    </h3>
     <span class="tenure">{{dateRange .}}</span>
+    </h3>
     {{#if keywords}}
-    {{#if start}}| {{/if}}<span class="keywords">{{#each keywords}}{{{ . }}} {{/each}}</span>
+    {{#if start}}{{/if}}<span class="keywords">{{#each keywords}}<span class='keyword{{#if @last}} last{{/if}}'>{{{ . }}}</span>{{/each}}</span>
     {{/if}}
   <p>{{{ summary }}}</p>
   {{> highlights }}
