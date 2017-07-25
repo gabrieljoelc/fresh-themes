@@ -89,6 +89,11 @@ hr {
   content: "";
 }
 
+.label {
+  font-family: {{{fontList 'heading3'}}};
+  font-size: 18px;
+}
+
 h1 {
   font-family: {{{fontList 'heading1'}}};
   font-size: 40px;
