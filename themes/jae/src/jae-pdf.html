@@ -82,6 +82,8 @@
 
         <h1>{{{ r.name }}}</h1>
 
+        <p class="label">{{{ r.info.label }}}</p>
+
         {{! <!--
           Give some basic contact info. Here, the HAS helper is similar
           to a normal IF, but provides a guaranteed-to-be-safe check against a
@@ -89,10 +91,12 @@
           (throw an exception) if contact is null, depending on Handlebars
           engine settings, but ((#has 'contact.email')) never will.
         --> }}
-        <div id="contact">
-          {{#has r.contact.email}}<div class="email"><a href="mailto:{{{ RAW.contact.email }}}">{{ RAW.contact.email }}</a></div>{{/has}}
-          {{#has r.contact.phone}}<div class="phone">{{ RAW.contact.phone }}</div>{{/has}}
-          {{#has r.contact.website}}<div class="website"><a href="{{{ RAW.contact.website }}}">{{ RAW.contact.website }}</a></div>{{/has}}
+        <div id="contact" class="contact">
+          <div class="email"><a href="mailto:{{{RAW.contact.email}}}"><i class="fa fa-lg fa-envelope" aria-hidden="true"></i></a></div>
+          {{#each r.social}}
+            <div><a href="{{{this.url}}}"><i class="fa fa-lg fa-{{{this.label}}}" aria-hidden="true"></i>
+</a></div>
+          {{/each}}
         </div>
       </header>
 
@@ -131,9 +135,6 @@
   <ul class="list-unstyled">
     {{#each r.skills.sets}}
       <li class="card card-nested card-skills">
-        <div class="skill-level" rel="tooltip" title="{{ level }}" data-placement="left">
-          <div class="skill-progress {{toLower level }}"></div>
-        </div>
         <div class="skill-info">
           <strong>{{ name }}</strong>
           <div class="space-top labels">
@@ -194,21 +195,22 @@ also doesn't render any content.
 -->}}
 
 {{#*inline "body-employment" }}
-<div>
+<div class="employment">
   <h3><em>{{ position }}</em>,
     {{#if url }}
     <a href="{{{ url }}}">{{ employer }}</a>
     {{else}}
     {{ employer }}
     {{/if}}
-    </h3>
     <span class="tenure">{{dateRange .}}</span>
+    </h3>
     {{#if keywords}}
-    {{#if start}}| {{/if}}<span class="keywords">{{#each keywords}}{{{ . }}} {{/each}}</span>
+    {{#if start}}{{/if}}<span class="keywords">{{#each keywords}}<span class='keyword{{#if @last}} last{{/if}}'>{{{ . }}}</span>{{/each}}</span>
     {{/if}}
   <p>{{{ summary }}}</p>
   {{> highlights }}
 </div>
+{{#unless @last}}<hr>{{/unless}}
 {{/inline}}
 
 {{! <!--
