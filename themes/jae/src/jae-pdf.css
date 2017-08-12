@@ -25,8 +25,8 @@ body {
 the PDF case, <main> for the HTML case, and style both via an ID. */
 #main {
   background-color: #FFF;
-  margin: 10px;
-  padding: 10px;
+  margin: 0 10px 0 10px;
+  padding: 0 10px 0 10px;
   border: 1px solid #E6E6E6;
 }
 
